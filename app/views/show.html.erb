@@ -1,0 +1,31 @@
+<h1>Student Info</h1>
+<h3><%= @student["first_name"] %> <%= @student["last_name"] %></h3>
+<p><%= @student["email"] %></p>
+<p><%= @student["phone_number"] %></p>
+<p><%= @student["short_bio"] %></p>
+<p><%= @student["linkedin_url"] %></p>
+<p><%= @student["twitter_handle"] %></p>
+<p><%= @student["blog_url"] %></p>
+<p><%= @student["resume_url"] %></p>
+<p><%= @student["github_url"] %></p>
+<p><%= @student["photo_url"] %></p>
+
+<%= @student.experiences.each do |experience| %>
+<p><%= experience.job_title %></p>
+<p><%= experience.company_name %></p>
+<p><%= experience.start_date %></p>
+<p><%= experience.end_date %></p>
+<p><%= experience.job_title %></p>
+<p><%= experience.job_title %></p>
+
+
+
+
+
+
+<a href="/students/<%= @student["id"] %>/edit">Edit</a>
+<%= form_tag "/students/#{@student['id']}", method: :delete do %>
+  <input type="submit" value="delete">
+<% end %>
+<a href="/students">Back to students</a>
+
