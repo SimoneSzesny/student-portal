@@ -1,0 +1,13 @@
+<h1>Edit Resume!</h1>
+<%= form_tag "/students/#{@student['id']}", method: :patch do %>
+  <div>
+    Name: <input type="text" name="form_name", value=<%= @student["name"] %>>
+  </div>
+  <div>
+    Style: <input type="text" name="form_style" value=<%= @beer["style"] %>>
+  </div>
+  <div>
+    Alcohol: <input type="text" name="form_alcohol" value=<%= @beer["alcohol"] %>>
+  </div>
+  <input type="submit" value="Submit">
+<% end %>
