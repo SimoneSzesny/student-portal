@@ -1,3 +1,4 @@
+#id first_name  last_name email phone_number  short_bio linkdin_url twitter_handle  blog_url  resume_url  github_url  photo_url
 class StudentsController < ApplicationController
   STUDENTS = [
     {
