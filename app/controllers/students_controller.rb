@@ -56,7 +56,7 @@ class StudentsController < ApplicationController
 
   def index
     # @student = Unirest.get("http://localhost:3000/ ENTER URL ").body
-    @students = JSON.parse(STUDENTS.to_json)
+    # @students = JSON.parse(STUDENTS.to_json)
   end
 
   def new
