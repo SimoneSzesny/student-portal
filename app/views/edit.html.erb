@@ -50,41 +50,7 @@
       Details: <input type="text" name="details" value=<%= @student["details"] %>>
     </div>
   <% end %>
-  <% @student.capstones.each do |capstone| %>
-    <div>
-      Name: <input type="text" name="name" value=<%= @student["name"] %>>
-    </div>
-    <div>
-      Description: <input type="text" name="description" value=<%= @student["description"] %>>
-    </div>
-    <div>
-      URL: <input type="text" name="url" value=<%= @student["url"] %>>
-    </div>
-    <div>
-      Screen Shot: <input type="text" name="screenshot_url" value=<%= @student["screenshot_url"] %>>
-    </div>
-  <% end %> 
-  <% @student.educations.each do |education| %>
-    <div>
-      University: <input type="text" name="university_name" value=<%= @student["university_name"] %>>
-    </div>
-    <div>
-      Degree: <input type="text" name="degree" value=<%= @student["degree"] %>>
-    </div>
-    <div>
-      Start: <input type="text" name="start_date" value=<%= @student["start_date"] %>>
-    </div>
-    <div>
-      End: <input type="text" name="end_date" value=<%= @student["end_date"] %>>
-    </div>
-    <div>
-      Details: <input type="text" name="details" value=<%= @student["details"] %>>
-    </div>
-  <% end %>
-  <% @student.skills.each do |skill| %> 
-    <div>
-      Skill: <input type="text" name="skill" value=<%= @student["skill"] %>>
-    </div>
-  <% end %> 
+  
+
   <input type="submit" value="Submit">
 <% end %>

@@ -1,0 +1,19 @@
+<h1>Edit Capstone!</h1>
+<%= form_tag "/educations/#{@education['id']}", method: :patch do %>
+  <div>
+    University: <input type="text" name="university_name" value=<%= @education["university_name"] %>>
+  </div>
+  <div>
+    Degree: <input type="text" name="degree" value=<%= @education["degree"] %>>
+  </div>
+  <div>
+    Start: <input type="text" name="start_date" value=<%= @education["start_date"] %>>
+  </div>
+  <div>
+    End: <input type="text" name="end_date" value=<%= @education["end_date"] %>>
+  </div>
+  <div>
+    Details: <input type="text" name="details" value=<%= @education["details"] %>>
+  </div>
+  <input type="submit" value="Submit"> 
+<% end %> 

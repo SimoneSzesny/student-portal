@@ -1,0 +1,7 @@
+<h1>Edit Skill!</h1>
+<%= form_tag "/skills/#{@skill['id']}", method: :patch do %>
+  <div>
+    Skill: <input type="text" name="skill" value=<%= @student["skill"] %>>
+  </div>
+  <input type="submit" value="Submit">
+<% end %> 
