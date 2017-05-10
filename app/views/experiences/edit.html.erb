@@ -1,0 +1,20 @@
+<h1>Edit Experience!</h1>
+  <%= form_tag "/experiences/#{@experience['id']}", method: :patch do %>
+    <div>
+      Job Title: <input type="text" name="job_title" value=<%= @experience["job_title"] %>>
+    </div>
+    <div>
+      Company: <input type="text" name="company_name" value=<%= @experience["company_name"] %>>
+    </div>
+    <div>
+      Start Date: <input type="text" name="start_date" value=<%= @experience["start_date"] %>>
+    </div>
+    <div>
+      End Date: <input type="text" name="end_date" value=<%= @experience["end_date"] %>>
+    </div>
+    <div>
+      Details: <input type="text" name="details" value=<%= @experience["details"] %>>
+    </div>
+  <% end %>
+  <input type="submit" value="Submit">
+<% end %>
