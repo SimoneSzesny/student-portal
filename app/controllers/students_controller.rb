@@ -67,7 +67,7 @@ class StudentsController < ApplicationController
         ENTER: params["ENTER"]
       }
     ).body
-    redirect_to "/ ENTER URL /#{@cat['id']}"
+    redirect_to "/ ENTER URL /#{@student['id']}"
   end
 
   def show
