@@ -1,0 +1,48 @@
+<h1>Student Info</h1>
+<h3><%= @student["first_name"] %> <%= @student["last_name"] %></h3>
+<p><%= @student["email"] %></p>
+<p><%= @student["phone_number"] %></p>
+<p><%= @student["short_bio"] %></p>
+<p><%= @student["linkedin_url"] %></p>
+<p><%= @student["twitter_handle"] %></p>
+<p><%= @student["blog_url"] %></p>
+<p><%= @student["resume_url"] %></p>
+<p><%= @student["github_url"] %></p>
+<p><%= @student["photo_url"] %></p>
+
+<h3>Experiences</h3>
+<%= @student.experiences.each do |experience| %>
+  <p><%= experience.job_title %></p>
+  <p><%= experience.company_name %></p>
+  <p><%= experience.start_date %></p>
+  <p><%= experience.end_date %></p>
+  <p><%= experience.details %></p>
+<% end %> 
+
+<h3>Capstone</h3>
+<%= @student.capstones.each do |capstone| %>
+  <p><%= capstone.name %></p>
+  <p><%= capstone.description %></p>
+  <p><%= capstone.url %></p>
+<% end %>
+
+<h3>Skills</h3>
+<%= @student.skills.each do |skill| %>
+  <p><%= skill %></p>
+<% end %>
+
+<h3>Education</h3>
+<%= @student.educations.each do |education| %>
+  <% education.start_date %> 
+  <% education.end_date %> 
+  <% education.degree %> 
+  <% education.university_name %> 
+  <% education.details %> 
+<% end %>
+
+<a href="/students/<%= @student["id"] %>/edit">Edit</a>
+<%= form_tag "/students/#{@student['id']}", method: :delete do %>
+  <input type="submit" value="delete">
+<% end %>
+<a href="/students">Back to students</a>
+

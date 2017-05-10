@@ -1,5 +1,4 @@
 class StudentsController < ApplicationController
-
   def index
     @student = Unirest.get("http://localhost:3000/ ENTER URL ").body
   end
@@ -37,7 +36,5 @@ class StudentsController < ApplicationController
     @student = Unirest.delete("http://localhost:3000 ENTER URL /#{params[:id]}").body
     redirect_to ""
   end
-
-
 end
 

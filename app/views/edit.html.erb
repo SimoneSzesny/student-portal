@@ -1,0 +1,90 @@
+<h1>Edit Resume!</h1>
+<%= form_tag "/students/#{@student['id']}", method: :patch do %>
+  <div>
+    First Name: <input type="text" name="first_name", value=<%= @student["first_name"] %>>
+  </div>
+  <div>
+    Last Name: <input type="text" name="last_name" value=<%= @student["last_name"] %>>
+  </div>
+  <div>
+    Email: <input type="text" name="email" value=<%= @student["email"] %>>
+  </div>
+  <div>
+    Phone Number: <input type="text" name="phone_number" value=<%= @student["phone_number"] %>>
+  </div>
+  <div>
+    Short Bio: <input type="text" name="short_bio" value=<%= @student["short_bio"] %>>
+  </div>
+  <div>
+    LinkedIn: <input type="text" name="linkedin_url" value=<%= @student["linkedin_url"] %>>
+  </div>
+  <div>
+    Twitter Handle: <input type="text" name="twitter_handle" value=<%= @student["twitter_handle"] %>>
+  </div>
+  <div>
+    Blog: <input type="text" name="blog_url" value=<%= @student["blog_url"] %>>
+  </div>
+  <div>
+    Resume: <input type="text" name="resume_url" value=<%= @student["resume_url"] %>>
+  </div>
+  <div>
+    Github: <input type="text" name="github_url" value=<%= @student["github_url"] %>>
+  </div>
+  <div>
+    Photo Link: <input type="text" name="photo_url" value=<%= @student["photo_url"] %>>
+  </div>
+  <% @student.experiences.each do |experience| %>
+    <div>
+      Job Title: <input type="text" name="job_title" value=<%= @student["job_title"] %>>
+    </div>
+    <div>
+      Company: <input type="text" name="company_name" value=<%= @student["company_name"] %>>
+    </div>
+    <div>
+      Start Date: <input type="text" name="start_date" value=<%= @student["start_date"] %>>
+    </div>
+    <div>
+      End Date: <input type="text" name="end_date" value=<%= @student["end_date"] %>>
+    </div>
+    <div>
+      Details: <input type="text" name="details" value=<%= @student["details"] %>>
+    </div>
+  <% end %>
+  <% @student.capstones.each do |capstone| %>
+    <div>
+      Name: <input type="text" name="name" value=<%= @student["name"] %>>
+    </div>
+    <div>
+      Description: <input type="text" name="description" value=<%= @student["description"] %>>
+    </div>
+    <div>
+      URL: <input type="text" name="url" value=<%= @student["url"] %>>
+    </div>
+    <div>
+      Screen Shot: <input type="text" name="screenshot_url" value=<%= @student["screenshot_url"] %>>
+    </div>
+  <% end %> 
+  <% @student.educations.each do |education| %>
+    <div>
+      University: <input type="text" name="university_name" value=<%= @student["university_name"] %>>
+    </div>
+    <div>
+      Degree: <input type="text" name="degree" value=<%= @student["degree"] %>>
+    </div>
+    <div>
+      Start: <input type="text" name="start_date" value=<%= @student["start_date"] %>>
+    </div>
+    <div>
+      End: <input type="text" name="end_date" value=<%= @student["end_date"] %>>
+    </div>
+    <div>
+      Details: <input type="text" name="details" value=<%= @student["details"] %>>
+    </div>
+  <% end %>
+  <% @student.skills.each do |skill| %> 
+    <div>
+      Skill: <input type="text" name="skill" value=<%= @student["skill"] %>>
+    </div>
+  <% end %> 
+  <input type="submit" value="Submit">
+<% end %>
