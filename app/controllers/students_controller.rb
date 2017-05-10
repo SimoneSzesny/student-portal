@@ -55,8 +55,8 @@ class StudentsController < ApplicationController
   ]
 
   def index
-    # @student = Unirest.get("http://localhost:3000/ ENTER URL ").body
-    @students = JSON.parse(STUDENTS.to_json)
+    @student = Unirest.get("http://localhost:3000/ ENTER URL ").body
+    # @students = JSON.parse(STUDENTS.to_json)
   end
 
   def new
@@ -72,7 +72,8 @@ class StudentsController < ApplicationController
   end
 
   def show
-    @student = Unirest.get("http://localhost:3000/ ENTER URL /#{params[:id]}").body
+    @student = Unirest.get("https://resume-data-api-tubular-trio.herokuapp.com/resumes").body
+    render "index.html.erb"
   end
 
   def edit
