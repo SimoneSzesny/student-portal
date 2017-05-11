@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get "/" => "students#index"
   get "/students" => "students#index"
   get "/students/new" => "students#new"
   post "/students" => "students#create"
