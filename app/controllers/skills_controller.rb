@@ -1,40 +1,40 @@
 #id skill
 class SkillsController < ApplicationController
   def index
-    @skill = Unirest.get("http://localhost:3000/ ENTER URL ").body
+    @skill = Unirest.get("https://resume-data-api-tubular-trio.herokuapp.com/skills/#{params[:id]}").body
   end
 
   def new
   end
 
   def create
-    @skill = Unirest.post("http://localhost:3000/ ENTER URL",
+    @skill = Unirest.post("https://resume-data-api-tubular-trio.herokuapp.com/skills/",
       parameters: {
-        ENTER: params["ENTER"]
+        skill: params["skill"]
       }
     ).body
-    redirect_to "/ ENTER URL /#{@skill['id']}"
+    # redirect_to "/ ENTER URL /#{@skill['id']}"
   end
 
   def show
-    @skill = Unirest.get("http://localhost:3000/ ENTER URL /#{params[:id]}").body
+    @skill = Unirest.get("https://resume-data-api-tubular-trio.herokuapp.com/skill/#{params[:id]}").body
   end
 
   def edit
-    @skill = Unirest.get("http://localhost:3000/ ENTER URL /#{params[:id]}").body
+    @skill = Unirest.get("https://resume-data-api-tubular-trio.herokuapp.com/resumes/#{params[:id]}").body
   end
 
   def update
-    @skill = Unirest.patch("http://localhost:3000 ENTER URL #{params[:id]}",
+    @skill = Unirest.patch("https://resume-data-api-tubular-trio.herokuapp.com/resumes/#{params[:id]}",
         parameters: {
-        ENTER: params["ENTER"],
+        skill: params["skill"],
       }
     ).body
-    redirect_to "/ ENTER URL /#{@skill['id']}"
+    # redirect_to "/ ENTER URL /#{@skill['id']}"
   end
 
   def destroy
-    @skill = Unirest.delete("http://localhost:3000 ENTER URL /#{params[:id]}").body
-    redirect_to ""
+    @skill = Unirest.delete("https://resume-data-api-tubular-trio.herokuapp.com/resumes/#{params[:id]}").body
+    # redirect_to ""
   end
 end
