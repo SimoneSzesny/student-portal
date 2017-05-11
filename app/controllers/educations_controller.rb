@@ -1,40 +1,50 @@
 #id  start_date  end_date  degree  university_name details student_id
 class EducationsController < ApplicationController
   def index
-    @education = Unirest.get("http://localhost:3000/ ENTER URL ").body
+    @education = Unirest.get("https://resume-data-api-tubular-trio.herokuapp.com/education/#{params[:id]}").body
   end
 
   def new
   end
 
   def create
-    @education = Unirest.post("http://localhost:3000/ ENTER URL",
+    @education = Unirest.post("https://resume-data-api-tubular-trio.herokuapp.com/education/",
       parameters: {
-        ENTER: params["ENTER"]
+        start_date: params["start_date"],
+        end_date: params["end_date"],
+        degree: params["degree"],
+        university_name: params["university_name"],
+        details: params["details"],
+        student_id: params["student_id"]
       }
     ).body
-    redirect_to "/ ENTER URL /#{@education['id']}"
+    # redirect_to "/ ENTER URL /#{@education['id']}"
   end
 
   def show
-    @education = Unirest.get("http://localhost:3000/ ENTER URL /#{params[:id]}").body
+    @education = Unirest.get("https://resume-data-api-tubular-trio.herokuapp.com/education/#{params[:id]}").body
   end
 
   def edit
-    @education = Unirest.get("http://localhost:3000/ ENTER URL /#{params[:id]}").body
+    @education = Unirest.get("https://resume-data-api-tubular-trio.herokuapp.com/education/#{params[:id]}").body
   end
 
   def update
-    @education = Unirest.patch("http://localhost:3000 ENTER URL #{params[:id]}",
+    @education = Unirest.patch("https://resume-data-api-tubular-trio.herokuapp.com/education/#{params[:id]}",
         parameters: {
-        ENTER: params["ENTER"],
+        start_date: params["start_date"],
+        end_date: params["end_date"],
+        degree: params["degree"],
+        university_name: params["university_name"],
+        details: params["details"],
+        student_id: params["student_id"]
       }
     ).body
-    redirect_to "/ ENTER URL /#{@education['id']}"
+    # redirect_to "/ ENTER URL /#{@education['id']}"
   end
 
   def destroy
-    @education = Unirest.delete("http://localhost:3000 ENTER URL /#{params[:id]}").body
+    @education = Unirest.delete("https://resume-data-api-tubular-trio.herokuapp.com/education/#{params[:id]}").body
     redirect_to ""
   end
 end

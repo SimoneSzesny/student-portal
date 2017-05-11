@@ -4,9 +4,9 @@ class SessionsController < ApplicationController
   end
 
   def create
-    user = User.find_by(email: params[:email])
-    if user && user.authenticate(params[:password])
-      session[:user_id] = user.id
+    @student = Unirest.get("https://resume-data-api-tubular-trio.herokuapp.com/resumes").body
+    if @student && @student.authenticate(params[:password])
+      session[:student_id] = student.id
       flash[:success] = 'Successfully logged in!'
       redirect_to '/'
     else
