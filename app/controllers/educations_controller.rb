@@ -40,7 +40,7 @@ class EducationsController < ApplicationController
         student_id: params["student_id"]
       }
     ).body
-    # redirect_to "/ ENTER URL /#{@education['id']}"
+    redirect_to "/students/1"
   end
 
   def destroy
