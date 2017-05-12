@@ -38,3 +38,14 @@
   <a href="/capstones/<%= capstone['id'] %>/edit">edit</a>
 <% end %> 
 
+<h3>Experience</h3>
+<% @student["experiences"].each do |experience| %>
+  <p><%= experience["job_title"] %></p>
+  <p><%= experience["company_name"] %></p>
+  <p><%= experience["start_date"] %></p>
+  <p><%= experience["end_date"] %></p>
+  <p><%= experience["details"] %></p>
+  <a href="/experiences/<%= experience['id'] %>/edit">edit</a>
+<% end %> 
+
+
