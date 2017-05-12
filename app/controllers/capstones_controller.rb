@@ -8,12 +8,16 @@ class CapstonesController < ApplicationController
   end
 
   def create
-    @capstone = Unirest.post("http://localhost:3000/ ENTER URL",
+    @capstone = Unirest.post("https://resume-data-api-tubular-trio.herokuapp.com/capstones",
       parameters: {
-        ENTER: params["ENTER"]
+        name: params["name"],
+        description: params["description"],
+        url: params["url"],
+        screenshot_url: params["screenshot_url"],
+        student_id: params["student_id"]
       }
     ).body
-    edirect_to "/ ENTER URL /#{@capstones['id']}"
+    redirect_to "/ ENTER URL /#{@capstones['id']}"
   end
 
   def show
@@ -25,16 +29,20 @@ class CapstonesController < ApplicationController
   end
 
   def update
-    @capstone = Unirest.patch("http://localhost:3000 ENTER URL #{params[:id]}",
+    @capstone = Unirest.patch("https://resume-data-api-tubular-trio.herokuapp.com/capstones/#{params[:id]}",
         parameters: {
-        ENTER: params["ENTER"],
+        Eame: params["name"],
+        description: params["description"],
+        url: params["url"],
+        screenshot_url: params["screenshot_url"],
+        student_id: params["student_id"]
       }
     ).body
-    edirect_to "/ ENTER URL /#{@capstones['id']}"
+    redirect_to "/ ENTER URL /#{@capstones['id']}"
   end
 
   def destroy
-    @capstone = Unirest.delete("http://localhost:3000 ENTER URL /#{params[:id]}").body
+    @capstone = Unirest.delete("https://resume-data-api-tubular-trio.herokuapp.com/capstones/#{params[:id]}").body
     redirect_to ""
   end
 end
