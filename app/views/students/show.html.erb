@@ -1,11 +1,40 @@
+<h4>ID</h4>
 <p><%= @student['id'] %></p>
-<p><%= @student['first_name'] %></p>
-<p><%= @student['last_name'] %></p>
+<h4>Name</h4>
+<p><%= @student['first_name'] %> <%= @student['last_name'] %></p>
+<h4>Email</h4>
 <p><%= @student['email'] %></p>
+<h4>Bio</h4>
 <p><%= @student['short_bio'] %></p>
+<h4>LinkedIn</h4>
 <p><%= @student['linkedin_url'] %></p>
+<h4>Twitter</h4>
 <p><%= @student['twitter_handle'] %></p>
+<h4>Blog</h4>
 <p><%= @student['personal_blog_url'] %></p>
+<h4>Resume URL</h4>
 <p><%= @student['resume_url'] %></p>
+<h4>Github URL</h4>
 <p><%= @student['github_url'] %></p>
+<h4>Photo</h4>
 <p><%= @student['photo'] %></p>
+
+<h3>Education</h3>
+<% @student["educations"].each do |education| %>
+  <p4><%= education["university_name"] %></p4>
+  <p><%= education["start_date"] %></p>
+  <p><%= education["end_date"] %></p>
+  <p><%= education["degree"] %></p>
+  <p><%= education["details"] %></p>
+  <a href="/experiences/<%= education['id'] %>/edit">edit</a>
+<% end %>
+
+<h3>Capstone</h3>
+<% @student["capstones"].each do |capstone| %>
+  <p><%= capstone["name"] %></p>
+  <p><%= capstone["description"] %></p>
+  <p><%= capstone["url"] %></p>
+  <p><%= capstone["screenshot_url"] %></p>
+  <a href="/capstones/<%= capstone['id'] %>/edit">edit</a>
+<% end %> 
+
