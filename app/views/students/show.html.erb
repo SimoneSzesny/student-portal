@@ -48,4 +48,9 @@
   <a href="/experiences/<%= experience['id'] %>/edit">edit</a>
 <% end %> 
 
+<h3>Skills</h3>
+<% @student["skills"].each do |skill| %>
+  <p><%= skill["skill"] %></p>
+  <a href="/skills/<%= skill['id'] %>/edit">edit</a>
+<% end %> 
 
